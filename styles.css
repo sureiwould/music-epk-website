@@ -1,3 +1,4 @@
+
 /* Color Palette */
 :root {
     --ink: #f5f5f5;
@@ -65,50 +66,43 @@ section {
     padding-bottom: 4rem;
 }
 
-/* Header */
-header {
-    max-width: 80rem;
-    margin: 1rem auto 0;
+/* Header and Navigation */
+.site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+
+    width: 100%;
+    margin: 0;
     padding: 1.5rem 2rem;
 
     background-color: #111313;
-    border: 1px solid #4a4a4a;
-    border-radius: 1rem 1rem 0 0;
+    border-bottom: 1px solid #4a4a4a;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+/* Logo */
+.logo {
+    color: var(--ink);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
-header p {
-    margin: 0.25rem 0 0;
-    color: var(--accent);
-}
-
-
-/* Nav */
-nav {
-    max-width: 80rem;
-    margin: 0 auto;
-
-    background-color: #111313;
-    border: 1px solid #4a4a4a;
-    border-top: none;
-}
-
-nav ul {
+/* Navigation Links */
+.nav-links {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2.5rem;
+    gap: 1.5rem;
 
     margin: 0;
-    padding: 1.25rem 2rem;
+    padding: 0;
     list-style: none;
 }
 
-nav a {
+.nav-links a {
     display: inline-block;
     padding: 0.25rem 0;
 
@@ -119,15 +113,72 @@ nav a {
     letter-spacing: 0.08rem;
 
     border-bottom: 2px solid transparent;
-    transition: color 0.2s ease, border-color 0.2s ease;
+
+    transition: color 0.2s ease,
+                border-color 0.2s ease;
 }
 
-nav a:hover,
-nav a:focus-visible {
+/* Navigation Hover and Active Page */
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.nav-links a[aria-current="page"] {
     color: var(--accent);
     border-bottom-color: var(--accent);
 }
 
+/* Contact Button */
+.contact-btn {
+    display: inline-block;
+    padding: 0.65rem 1.5rem;
+
+    background-color: var(--accent);
+    color: var(--blue-grey-dark);
+    border-radius: 2rem;
+
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    white-space: nowrap;
+
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.contact-btn:hover {
+    background-color: #c5e0f2;
+    transform: translateY(-2px);
+}
+
+/* Keyboard Accessibility */
+.logo:focus-visible,
+.contact-btn:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* Desktop Navigation */
+@media (min-width: 1000px) {
+    .site-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo,
+    .contact-btn {
+        flex: 0 0 180px;
+    }
+
+    .site-header nav {
+        margin: 0;
+    }
+
+    .contact-btn {
+        text-align: center;
+    }
+}
 
 /* Contact Form */
 #contact form {
@@ -171,8 +222,10 @@ nav a:focus-visible {
     padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 0.5rem;
+
     background-color: var(--accent);
     color: #111313;
+
     font: inherit;
     cursor: pointer;
 
@@ -186,7 +239,6 @@ nav a:focus-visible {
     transform: translateY(-2px);
 }
 
-
 /* Keyboard Focus */
 #contact input:focus-visible,
 #contact select:focus-visible,
@@ -194,4 +246,28 @@ nav a:focus-visible {
 #contact button:focus-visible {
     outline: 3px solid var(--accent);
     outline-offset: 3px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 599px) {
+    main {
+        padding: 1.25rem;
+    }
+
+    .site-header {
+        margin: 0.5rem;
+        padding: 1.25rem;
+    }
+
+    .nav-links {
+        gap: 0.75rem 1.25rem;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
 }
