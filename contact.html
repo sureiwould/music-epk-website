@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Kevin Sclar | Music & Live Performances</title>
+</head>
+
+<body>
+
+<header>
+    <h1>Kevin Sclar</h1>
+    <p>Guitarist, musician, and performer based in Jacksonville, Florida.</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="performances.html">Performances</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section id="contact">
+        <h2>Contact &amp; Booking</h2>
+        <p>
+            Interested in booking me for a live performance,
+            session work, or recording services?
+            Feel free to reach out using the form below.
+        </p>
+
+    <form action="#" method="post">
+
+    <label for="full-name">Full Name</label>
+    <input type="text" id="full-name" name="full-name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone"
+       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+       maxlength="12"
+       title="Please enter your phone number."
+       aria-describedby="phone-hint">
+
+<p id="phone-hint">Phone number is automatically formatted as you type.</p>
+
+    <label for="service">Service Requested</label>
+    <select id="service" name="service">
+        <option value="">Select a service</option>
+        <option value="live">Live Performance</option>
+        <option value="session">Session Work</option>
+        <option value="production">Recording / Production</option>
+    </select>
+
+    <fieldset>
+        <legend>Preferred Contact Method</legend>
+
+        <input type="radio" id="contact-email"
+               name="contact-method" value="email">
+        <label for="contact-email">Email</label>
+
+        <input type="radio" id="contact-phone"
+               name="contact-method" value="phone">
+        <label for="contact-phone">Phone</label>
+    </fieldset>
+
+   <label for="message">Message</label>
+<textarea id="message" name="message"
+          required aria-describedby="message-hint"></textarea>
+
+<p id="message-hint">
+    Please include details about your event or project.
+</p>
+
+    <button type="submit">Send Inquiry</button>
+
+</form>
+
+    </section>
+</main>
+
+<footer>
+    <p>Kevin Sclar</p>
+    <p>Guitarist &amp; Musician</p>
+    <p>Instagram | YouTube | Spotify</p>
+    <p>&copy; 2026 Kevin Sclar. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+
+</html>
