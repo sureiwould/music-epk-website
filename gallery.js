@@ -1,3 +1,5 @@
+
+/* Slideshow */
 const slides = document.querySelectorAll(".slides img");
 let current = 0;
 
@@ -15,3 +17,22 @@ if (slides.length > 0) {
         setInterval(() => showSlide(current + 1), 5000);
     }
 }
+
+/* Click-to-Enlarge Gallery Images */
+const lightbox = document.querySelector(".lightbox");
+const enlargedImage = lightbox.querySelector("img");
+
+document.querySelectorAll(".gallery-image").forEach(button => {
+    button.onclick = () => {
+        const image = button.querySelector("img");
+        enlargedImage.src = image.src;
+        enlargedImage.alt = image.alt;
+        lightbox.showModal();
+    };
+});
+
+document.querySelector(".lightbox-close").onclick = () => lightbox.close();
+
+lightbox.onclick = event => {
+    if (event.target === lightbox) lightbox.close();
+};
