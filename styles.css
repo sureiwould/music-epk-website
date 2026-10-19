@@ -554,3 +554,165 @@ section {
     outline: 3px solid var(--accent);
     outline-offset: 3px;
 }
+
+
+/* ========================================
+   PERFORMANCES PAGE
+======================================== */
+
+/* Featured Performance */
+
+.featured-video {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto 3rem;
+}
+
+.featured-video iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 0.75rem;
+}
+
+
+/* Responsive Video Grid */
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 220px), 1fr)
+    );
+    gap: 1.5rem;
+}
+
+
+/* YouTube Shorts */
+
+.video-grid iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border: none;
+    border-radius: 0.75rem;
+}
+
+
+/* ========================================
+   HOME PAGE
+======================================== */
+
+/* Hero Section */
+
+#intro.home-hero {
+    position: relative;
+    height: 350px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 0.75rem;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Dark Overlay */
+
+.home-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Hero Text */
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Booking Button */
+
+.hero-button {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    margin-top: 0.5rem;
+    background-color: var(--accent);
+    color: var(--blue-grey-dark);
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.hero-button:hover,
+.hero-button:focus-visible {
+    background-color: white;
+}
+
+/* Services Grid */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 250px), 1fr)
+    );
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.service-card {
+    padding: 1.5rem;
+    background-color: var(--blue-grey-mid);
+    border: 1px solid var(--blue-grey-light);
+    border-radius: 0.75rem;
+}
+
+.service-card h3 {
+    margin-top: 0;
+}
+
+/* Section Links */
+
+.section-link {
+    color: var(--accent);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.section-link:hover,
+.section-link:focus-visible {
+    text-decoration: underline;
+}
+
+/* Mobile Hero */
+
+@media (max-width: 599px) {
+    #intro.home-hero {
+        height: auto;
+        min-height: 400px;
+    }
+}
