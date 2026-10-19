@@ -295,27 +295,26 @@ section {
     max-width: 1000px;
     margin: 2rem auto;
     overflow: hidden;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     background-color: var(--blue-grey-dark);
 }
 
-/* Slideshow Image Container */
-
 .slides {
     position: relative;
+    width: 100%;
     aspect-ratio: 16 / 9;
+    overflow: hidden;
 }
 
-/* Hide All Slideshow Images by Default */
-
 .slides img {
+    position: absolute;
+    inset: 0;
     display: none;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
-
-/* Display the Active Slide */
 
 .slides img.active {
     display: block;
@@ -328,44 +327,28 @@ section {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 2.25rem;
-    height: 2.25rem;
-
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
     border: none;
     border-radius: 50%;
-
     background-color: rgba(0, 0, 0, 0.6);
-    color: var(--ink);
-
+    color: white;
     font-size: 1.5rem;
     cursor: pointer;
-
     transition: background-color 0.2s ease;
 }
 
-/* Position Navigation Arrows */
-
-.slide-prev {
-    left: 0.5rem;
-}
-
-.slide-next {
-    right: 0.5rem;
-}
-
-/* Navigation Button Hover */
+.slide-prev { left: 0.5rem; }
+.slide-next { right: 0.5rem; }
 
 .slide-prev:hover,
 .slide-next:hover {
     background-color: rgba(0, 0, 0, 0.85);
 }
-
-/* Keyboard Focus Accessibility */
 
 .slide-prev:focus-visible,
 .slide-next:focus-visible {
@@ -379,16 +362,21 @@ section {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(min(100%, 250px), 1fr)
-    );
-
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
     gap: 1rem;
     width: 100%;
 }
 
-/* Gallery Images */
+.gallery-image {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    border-radius: 0.5rem;
+    background: transparent;
+    overflow: hidden;
+    cursor: zoom-in;
+}
 
 .gallery-grid img {
     display: block;
@@ -396,14 +384,69 @@ section {
     aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 0.5rem;
-
     transition: transform 0.3s ease;
 }
 
-/* Subtle Hover Effect */
+.gallery-image:hover img {
+    transform: scale(1.05);
+}
 
-.gallery-grid img:hover {
-    transform: scale(1.02);
+.gallery-image:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* ----------------------------------------
+   LIGHTBOX
+---------------------------------------- */
+
+.lightbox {
+    position: fixed;
+    padding: 0;
+    border: none;
+    border-radius: 0.5rem;
+    background: transparent;
+    max-width: 95vw;
+    max-height: 95vh;
+    overflow: visible;
+}
+
+.lightbox::backdrop {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox img {
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.lightbox-close:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
 }
 
 /* ----------------------------------------
@@ -444,66 +487,10 @@ section {
 
     .contact-btn:hover,
     #contact button:hover,
-    .gallery-grid img:hover,
+    .gallery-image:hover img,
     .booking-btn:hover {
         transform: none;
     }
-}
-
-/* Clickable Gallery Images */
-.gallery-image {
-    padding: 0;
-    border: none;
-    background: transparent;
-    cursor: zoom-in;
-}
-
-.gallery-image:focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 3px;
-}
-
-/* Enlarged Image */
-.lightbox {
-    position: relative;
-    padding: 0;
-    border: none;
-    border-radius: 0.5rem;
-    background: transparent;
-    max-width: 95vw;
-    max-height: 95vh;
-}
-
-.lightbox::backdrop {
-    background: rgba(0, 0, 0, 0.9);
-}
-
-.lightbox img {
-    display: block;
-    max-width: 90vw;
-    max-height: 90vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    border: none;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.75);
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.lightbox-close:focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 3px;
 }
 
 /* ----------------------------------------
