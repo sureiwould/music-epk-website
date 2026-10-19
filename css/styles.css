@@ -356,6 +356,13 @@ section {
     outline-offset: 3px;
 }
 
+/* Center Gallery Headings */
+
+#gallery h1,
+#photo-gallery h2 {
+    text-align: center;
+}
+
 /* ----------------------------------------
    RESPONSIVE PHOTO GRID
 ---------------------------------------- */
