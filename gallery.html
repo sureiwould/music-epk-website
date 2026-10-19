@@ -1,13 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="gallery.js" defer></script>
-    <title>Gallery | Kevin Sclar</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Kevin Sclar | Music & Live Performances</title>
 </head>
 
 <body>
@@ -21,114 +19,76 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="performances.html">Performances</a></li>
-            <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="services.html">Services</a></li>
         </ul>
     </nav>
 
-    <a href="contact.html" class="contact-btn">Contact</a>
+    <a href="contact.html" class="contact-btn"
+       aria-current="page">Contact</a>
 
 </header>
 
+
 <main>
+    <section id="contact">
+        <h1>Contact &amp; Booking</h1>
+        <p>
+            Interested in booking me for a live performance,
+            session work, or recording services?
+            Feel free to reach out using the form below.
+        </p>
 
-    <!-- Featured Slideshow -->
-    <section id="gallery">
+    <form action="#" method="post">
 
-        <h1>Gallery</h1>
+    <label for="full-name">Full Name</label>
+    <input type="text" id="full-name" name="full-name" required>
 
-        <div class="slideshow" aria-label="Featured photographs">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
 
-            <div class="slides">
+    <label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone"
+       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+       maxlength="12"
+       title="Please enter your phone number."
+       aria-describedby="phone-hint">
 
-                <img src="images/grill2.jpg"
-                     class="active"
-                     alt="under the bridge">
+<p id="phone-hint">Phone number is automatically formatted as you type.</p>
 
-                <img src="images/battlenight.png"
-                     alt="battle of the bands">
+    <label for="service">Service Requested</label>
+    <select id="service" name="service">
+        <option value="">Select a service</option>
+        <option value="live">Live Performance</option>
+        <option value="session">Session Work</option>
+        <option value="production">Recording / Production</option>
+    </select>
 
-                <img src="images/kava2.jpeg"
-                     alt="behind the scenes">
+    <fieldset>
+        <legend>Preferred Contact Method</legend>
 
-            </div>
+        <input type="radio" id="contact-email"
+               name="contact-method" value="email">
+        <label for="contact-email">Email</label>
 
-            <button class="slide-prev"
-                    type="button"
-                    aria-label="Previous photograph">
-                &#10094;
-            </button>
+        <input type="radio" id="contact-phone"
+               name="contact-method" value="phone">
+        <label for="contact-phone">Phone</label>
+    </fieldset>
 
-            <button class="slide-next"
-                    type="button"
-                    aria-label="Next photograph">
-                &#10095;
-            </button>
+   <label for="message">Message</label>
+<textarea id="message" name="message"
+          required aria-describedby="message-hint"></textarea>
 
-        </div>
+<p id="message-hint">
+    Please include details about your event or project.
+</p>
 
-    </section>
+    <button type="submit">Send Inquiry</button>
 
-    <!-- Photo Gallery -->
-    <section id="photo-gallery">
-
-        <h2>Photo Gallery</h2>
-
-        <div class="gallery-grid">
-
-            <button class="gallery-image" type="button">
-                <img src="images/battle.jpg"
-                     alt="Battle of The Bands"
-                     loading="lazy">
-            </button>
-
-            <button class="gallery-image" type="button">
-                <img src="images/papas3.jpg"
-                     alt="Playing at Papa's"
-                     loading="lazy">
-            </button>
-
-            <button class="gallery-image" type="button">
-                <img src="images/outside.jpeg"
-                     alt="Playing Outside"
-                     loading="lazy">
-            </button>
-
-            <button class="gallery-image" type="button">
-                <img src="images/boil.png"
-                     alt="Crabfish Boil"
-                     loading="lazy">
-            </button>
-
-            <button class="gallery-image" type="button">
-                <img src="images/fourth.jpg"
-                     alt="Fourth of July"
-                     loading="lazy">
-            </button>
-
-            <button class="gallery-image" type="button">
-                <img src="images/papas2.jpg"
-                     alt="Playing at Papas again"
-                     loading="lazy">
-            </button>
-
-        </div>
+</form>
 
     </section>
-
-    <!-- Enlarged Photograph -->
-    <dialog class="lightbox" aria-label="Enlarged photograph">
-
-        <button class="lightbox-close"
-                type="button"
-                aria-label="Close photograph">
-            &times;
-        </button>
-
-        <img src="" alt="">
-
-    </dialog>
-
 </main>
 
 <footer>
@@ -138,6 +98,7 @@
     <p>&copy; 2026 Kevin Sclar. All rights reserved.</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 
-/* ========================================
+/* ----------------------------------------
    COLOR PALETTE
-======================================== */
+---------------------------------------- */
 
 :root {
     --ink: #f5f5f5;
@@ -11,19 +11,17 @@
     --accent: #9fc5df;
 }
 
-
-/* ========================================
+/* ----------------------------------------
    RESET
-======================================== */
+---------------------------------------- */
 
 * {
     box-sizing: border-box;
 }
 
-
-/* ========================================
+/* ----------------------------------------
    PAGE STYLES
-======================================== */
+---------------------------------------- */
 
 body {
     margin: 0;
@@ -42,10 +40,9 @@ body {
     line-height: 1.6;
 }
 
-
-/* ========================================
+/* ----------------------------------------
    TYPOGRAPHY
-======================================== */
+---------------------------------------- */
 
 h1 {
     font-size: clamp(2.25rem, 4vw, 3rem);
@@ -63,15 +60,14 @@ p {
     margin-bottom: 1rem;
 }
 
-
-/* ========================================
+/* ----------------------------------------
    MAIN CONTENT
-======================================== */
+---------------------------------------- */
 
 main {
     max-width: 70rem;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1.25rem;
 }
 
 section {
@@ -83,10 +79,9 @@ section {
     padding-bottom: 4rem;
 }
 
-
-/* ========================================
+/* ----------------------------------------
    HEADER AND NAVIGATION
-======================================== */
+---------------------------------------- */
 
 .site-header {
     display: flex;
@@ -96,12 +91,11 @@ section {
 
     width: 100%;
     margin: 0;
-    padding: 1.5rem 2rem;
+    padding: 1.25rem;
 
     background-color: #111313;
     border-bottom: 1px solid #4a4a4a;
 }
-
 
 /* Logo */
 
@@ -113,14 +107,13 @@ section {
     white-space: nowrap;
 }
 
-
 /* Navigation Links */
 
 .nav-links {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 0.75rem 1.25rem;
 
     margin: 0;
     padding: 0;
@@ -143,7 +136,6 @@ section {
                 border-color 0.2s ease;
 }
 
-
 /* Navigation Hover and Active Page */
 
 .nav-links a:hover,
@@ -152,7 +144,6 @@ section {
     color: var(--accent);
     border-bottom-color: var(--accent);
 }
-
 
 /* Contact Button */
 
@@ -186,7 +177,6 @@ section {
     outline-offset: 3px;
 }
 
-
 /* Keyboard Accessibility */
 
 .logo:focus-visible,
@@ -195,10 +185,9 @@ section {
     outline-offset: 4px;
 }
 
-
-/* ========================================
+/* ----------------------------------------
    DESKTOP NAVIGATION
-======================================== */
+---------------------------------------- */
 
 @media (min-width: 1000px) {
 
@@ -222,10 +211,9 @@ section {
     }
 }
 
-
-/* ========================================
+/* ----------------------------------------
    CONTACT FORM
-======================================== */
+---------------------------------------- */
 
 #contact form {
     display: grid;
@@ -263,7 +251,6 @@ section {
     margin-right: 1rem;
 }
 
-
 /* Contact Form Button */
 
 #contact button {
@@ -286,7 +273,6 @@ section {
     transform: translateY(-2px);
 }
 
-
 /* Keyboard Focus */
 
 #contact input:focus-visible,
@@ -297,10 +283,9 @@ section {
     outline-offset: 3px;
 }
 
-
-/* ========================================
+/* ----------------------------------------
    GALLERY PAGE
-======================================== */
+---------------------------------------- */
 
 /* Featured Slideshow */
 
@@ -310,10 +295,9 @@ section {
     max-width: 1000px;
     margin: 2rem auto;
     overflow: hidden;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     background-color: var(--blue-grey-dark);
 }
-
 
 /* Slideshow Image Container */
 
@@ -321,7 +305,6 @@ section {
     position: relative;
     aspect-ratio: 16 / 9;
 }
-
 
 /* Hide All Slideshow Images by Default */
 
@@ -332,13 +315,11 @@ section {
     object-fit: cover;
 }
 
-
 /* Display the Active Slide */
 
 .slides img.active {
     display: block;
 }
-
 
 /* Slideshow Navigation Buttons */
 
@@ -352,8 +333,8 @@ section {
     align-items: center;
     justify-content: center;
 
-    width: 3rem;
-    height: 3rem;
+    width: 2.25rem;
+    height: 2.25rem;
 
     border: none;
     border-radius: 50%;
@@ -367,17 +348,15 @@ section {
     transition: background-color 0.2s ease;
 }
 
-
 /* Position Navigation Arrows */
 
 .slide-prev {
-    left: 1rem;
+    left: 0.5rem;
 }
 
 .slide-next {
-    right: 1rem;
+    right: 0.5rem;
 }
-
 
 /* Navigation Button Hover */
 
@@ -385,7 +364,6 @@ section {
 .slide-next:hover {
     background-color: rgba(0, 0, 0, 0.85);
 }
-
 
 /* Keyboard Focus Accessibility */
 
@@ -395,10 +373,9 @@ section {
     outline-offset: 3px;
 }
 
-
-/* ========================================
+/* ----------------------------------------
    RESPONSIVE PHOTO GRID
-======================================== */
+---------------------------------------- */
 
 .gallery-grid {
     display: grid;
@@ -407,10 +384,9 @@ section {
         minmax(min(100%, 250px), 1fr)
     );
 
-    gap: 1.5rem;
+    gap: 1rem;
     width: 100%;
 }
-
 
 /* Gallery Images */
 
@@ -424,61 +400,34 @@ section {
     transition: transform 0.3s ease;
 }
 
-
 /* Subtle Hover Effect */
 
 .gallery-grid img:hover {
     transform: scale(1.02);
 }
 
+/* ----------------------------------------
+   TABLET AND DESKTOP ADJUSTMENTS
+---------------------------------------- */
 
-/* ========================================
-   MOBILE ADJUSTMENTS
-======================================== */
-
-@media (max-width: 599px) {
-
-    main {
-        padding: 1.25rem;
+@media (min-width: 600px) {
+    main { padding: 2rem; }
+    .site-header { padding: 1.5rem 2rem; }
+    .nav-links { gap: 1.5rem; }
+    .slideshow { border-radius: 1rem; }
+    .slide-prev, .slide-next {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
     }
-
-    .site-header {
-        margin: 0;
-        padding: 1.25rem;
-    }
-
-    .nav-links {
-        gap: 0.75rem 1.25rem;
-    }
-
-    .slideshow {
-        border-radius: 0.5rem;
-    }
-
-    .slide-prev,
-    .slide-next {
-        width: 2.25rem;
-        height: 2.25rem;
-        font-size: 1.125rem;
-    }
-
-    .slide-prev {
-        left: 0.5rem;
-    }
-
-    .slide-next {
-        right: 0.5rem;
-    }
-
-    .gallery-grid {
-        gap: 1rem;
-    }
+    .slide-prev { left: 1rem; }
+    .slide-next { right: 1rem; }
+    .gallery-grid { gap: 1.5rem; }
 }
 
-
-/* ========================================
+/* ----------------------------------------
    REDUCED MOTION ACCESSIBILITY
-======================================== */
+---------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -487,17 +436,19 @@ section {
     #contact button,
     .slide-prev,
     .slide-next,
-    .gallery-grid img {
+    .gallery-grid img,
+    .booking-btn,
+    .hero-button {
         transition: none;
     }
 
     .contact-btn:hover,
     #contact button:hover,
-    .gallery-grid img:hover {
+    .gallery-grid img:hover,
+    .booking-btn:hover {
         transform: none;
     }
 }
-
 
 /* Clickable Gallery Images */
 .gallery-image {
@@ -555,10 +506,9 @@ section {
     outline-offset: 3px;
 }
 
-
-/* ========================================
+/* ----------------------------------------
    PERFORMANCES PAGE
-======================================== */
+---------------------------------------- */
 
 /* Featured Performance */
 
@@ -576,7 +526,6 @@ section {
     border-radius: 0.75rem;
 }
 
-
 /* Responsive Video Grid */
 
 .video-grid {
@@ -588,7 +537,6 @@ section {
     gap: 1.5rem;
 }
 
-
 /* YouTube Shorts */
 
 .video-grid iframe {
@@ -599,16 +547,16 @@ section {
     border-radius: 0.75rem;
 }
 
-
-/* ========================================
+/* ----------------------------------------
    HOME PAGE
-======================================== */
+---------------------------------------- */
 
 /* Hero Section */
 
 #intro.home-hero {
     position: relative;
-    height: 350px;
+    height: auto;
+    min-height: 400px;
     padding: 0;
     display: flex;
     align-items: center;
@@ -708,11 +656,146 @@ section {
     text-decoration: underline;
 }
 
-/* Mobile Hero */
+/* Wider Home Hero */
 
-@media (max-width: 599px) {
+@media (min-width: 600px) {
     #intro.home-hero {
-        height: auto;
-        min-height: 400px;
+        height: 350px;
+        min-height: 0;
     }
+}
+
+/* ----------------------------------------
+   ABOUT PAGE
+---------------------------------------- */
+
+#about-intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-image {
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.75rem;
+}
+
+.about-intro-text h1 {
+    margin-top: 0;
+}
+
+.about-intro-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+#about-bio {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+#about-bio h2 {
+    margin-top: 2rem;
+    color: var(--accent);
+}
+
+#about-bio p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* ----------------------------------------
+   SERVICES PAGE
+---------------------------------------- */
+
+#services-intro {
+    text-align: center;
+}
+
+#services-intro p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+#services-list .service-card {
+    display: flex;
+    flex-direction: column;
+}
+
+#services-list .service-card h2 {
+    margin-top: 0;
+    color: var(--accent);
+}
+
+#services-list .service-card p {
+    flex-grow: 1;
+    line-height: 1.7;
+}
+
+/* ----------------------------------------
+   ABOUT & SERVICES BOOKING SECTIONS
+---------------------------------------- */
+
+#about-contact,
+#services-contact {
+    text-align: center;
+    background-color: var(--blue-grey-mid);
+    border: 1px solid var(--blue-grey-light);
+    border-radius: 0.75rem;
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+}
+
+#about-contact h2,
+#services-contact h2 {
+    margin-top: 0;
+}
+
+#about-contact p,
+#services-contact p {
+    max-width: 600px;
+    margin: 1rem auto 2rem;
+    line-height: 1.7;
+}
+
+.booking-btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--blue-grey-dark);
+    padding: 0.85rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.booking-btn:hover {
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+.booking-btn:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+/* ----------------------------------------
+   ABOUT PAGE WIDE LAYOUT
+---------------------------------------- */
+
+@media (min-width: 769px) {
+    #about-intro {
+        grid-template-columns: 40% 1fr;
+        gap: 3rem;
+    }
+
+    .about-image { height: 450px; }
+    .about-intro-text p { font-size: 1.1rem; }
 }
