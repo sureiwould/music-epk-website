@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/audioscript.js" defer></script>
     <title>Kevin Sclar | Music & Live Performances</title>
 </head>
 
@@ -58,7 +59,70 @@
                 Book Now
             </a>
 
+           
+<!-- Featured Music Player -->
+<div class="music-player">
+
+    <h2>Listen to My Music</h2>
+    <h3 id="song-title">Song 1</h3>
+
+    <!-- Audio works even without JavaScript -->
+    <audio id="music-player" controls>
+        <source src="audio/song1.mp3" type="audio/mpeg">
+        Your browser does not support audio playback.
+    </audio>
+
+    <!-- Custom controls will appear when JavaScript loads -->
+    <div class="custom-player" hidden>
+
+        <div class="progress-container">
+            <input
+                type="range"
+                id="song-progress"
+                min="0"
+                max="100"
+                value="0"
+                aria-label="Song playback position">
         </div>
+
+        <div class="time-display">
+            <span id="current-time">0:00</span>
+            <span id="duration">0:00</span>
+        </div>
+
+        <div class="music-controls">
+            <button id="prev-song" type="button" aria-label="Previous song">
+                &#9198;
+            </button>
+
+            <button id="play-pause" type="button" aria-label="Play song">
+                &#9654;
+            </button>
+
+            <button id="next-song" type="button" aria-label="Next song">
+                &#9197;
+            </button>
+        </div>
+
+        
+    <!-- Volume Control -->
+        <div class="volume-control">
+        <span aria-hidden="true">🔊</span>
+        <input
+          type="range"
+            id="volume-slider"
+            min="0"
+            max="1"
+            step="0.01"
+            value="1"
+            aria-label="Volume">
+        </div>
+
+
+    </div>
+
+</div>
+
 
     </section>
 

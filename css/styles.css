@@ -654,8 +654,8 @@ section {
 
 @media (min-width: 600px) {
     #intro.home-hero {
-        height: 350px;
-        min-height: 0;
+        height: auto;
+        min-height: 500px;
     }
 }
 
@@ -792,4 +792,135 @@ section {
 
     .about-image { height: 450px; }
     .about-intro-text p { font-size: 1.1rem; }
+}
+
+
+/* Music Player */
+.music-player {
+    background-color: #263746;
+    border: 1px solid #354b5c;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 25px auto 0;
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+}
+
+.music-player h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #9fc5df;
+}
+
+.music-player h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #f5f5f5;
+}
+
+
+/* Built-in audio player */
+#music-player {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Custom music player */
+.custom-player {
+    width: 100%;
+}
+
+/* Hide custom controls until JavaScript is ready */
+.custom-player[hidden] {
+    display: none;
+}
+
+/* Progress bar */
+.progress-container {
+    width: 100%;
+    margin-top: 15px;
+}
+
+#song-progress {
+    width: 100%;
+    accent-color: #9fc5df;
+    cursor: pointer;
+}
+
+/* Song playback time */
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    color: #b9c9d6;
+    font-size: 0.8rem;
+}
+
+/* Playback buttons */
+.music-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.music-controls button {
+    background: transparent;
+    color: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+/* Main play button */
+#play-pause {
+    background-color: #9fc5df;
+    color: #18222c;
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+}
+
+.music-controls button:hover {
+    background-color: #354b5c;
+    color: #9fc5df;
+}
+
+#play-pause:hover {
+    background-color: #c5e0f2;
+    color: #18222c;
+}
+
+/* Keyboard accessibility */
+.music-controls button:focus-visible,
+#song-progress:focus-visible {
+    outline: 3px solid #9fc5df;
+    outline-offset: 3px;
+}
+
+
+/* Volume Control */
+.volume-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#volume-slider {
+    width: 110px;
+    accent-color: #9fc5df;
+    cursor: pointer;
+}
+
+#volume-slider:focus-visible {
+    outline: 3px solid #9fc5df;
+    outline-offset: 3px;
 }
