@@ -780,6 +780,13 @@ section {
     outline-offset: 4px;
 }
 
+
+.service-card.selected {
+    border: 2px solid #9fc5df;
+    background-color: #354b5c;
+}
+
+
 /* ----------------------------------------
    ABOUT PAGE WIDE LAYOUT
 ---------------------------------------- */
