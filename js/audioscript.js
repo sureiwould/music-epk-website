@@ -19,13 +19,13 @@ const songTitle = document.querySelector("#song-title");
 // Playlist
 
 const songs = [
-    "song1.mp3",
-    "song2.mp3",
-    "song3.mp3",
-    "song4.mp3",
-    "song5.mp3",
-    "song6.mp3",
-    "song7.mp3"
+    "Song1.mp3",
+    "Song2.mp3",
+    "Song3.mp3",
+    "Song4.mp3",
+    "Song5.mp3",
+    "Song6.mp3",
+    "Song7.mp3"
 ];
 
 let songIndex = 0;
